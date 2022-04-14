@@ -1,0 +1,21 @@
+.header {
+    border-bottom: 1px solid var(--secondary-color);
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+    grid-area: header;
+    color: var(--third-color);
+    justify-content: flex-end;
+    grid-column-gap: 20px;
+}
+.header__button {
+    border: 1px solid var(--secondary-color);
+    padding: 5px 16px;
+    border-radius: 5px;
+    color: var(--third-color);
+    transition: 0.4s ease;
+}
+.header__button:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
