@@ -10,4 +10,6 @@
 
 .main__content {
   grid-area: content;
+  background-color: var(--main-bg);
+  padding: 30px 20px;
 }
