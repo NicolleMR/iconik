@@ -1,5 +1,6 @@
+import Dashboard from "../../pages/Dashboard";
 import Header from "../Header";
-import NavBar from "../NavBar/NavBar";
+import NavBar from "../NavBar";
 import "./app.css";
 
 const App = () => (
@@ -7,7 +8,7 @@ const App = () => (
     <NavBar/>
     <Header/>
     <div className="main__content">
-      content  
+      <Dashboard/>
     </div>
   </main>
 );
