@@ -42,11 +42,10 @@
   background-color: var(--secondary-color);
 }
 .dashboard__resume--third-color {
-  background-color: var(--card-color);
-}
-.dashboard__resume--other-color {
-  background-color: var(--card-color);
   background-color: var(--third-color);
+}
+.dashboard__resume--old-rose-color {
+  background-color: var(--old-rose);
 }
 
 .dashboard__weight {

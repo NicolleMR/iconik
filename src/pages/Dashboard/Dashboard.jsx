@@ -15,11 +15,11 @@ const Dashboard = () => (
         <span className="dashboard__value dashboard__value--signo">$<span className="dashboard__value">4000000</span></span>
         <h3  className="dashboard__label">Egresos</h3>
       </div>
-      <div className="dashboard__resume dashboard__resume--third-color">
+      <div className="dashboard__resume dashboard__resume--old-rose-color">
         <span className="dashboard__value">5</span>
         <h3  className="dashboard__label">Clientes</h3>
       </div>
-      <div className="dashboard__resume dashboard__resume--other-color">
+      <div className="dashboard__resume dashboard__resume--third-color">
         <span className="dashboard__value">10</span>
         <h3  className="dashboard__label">Proximas Citas</h3>
       </div>
