@@ -1,5 +1,5 @@
 .nav-bar {
-  background: linear-gradient(90deg, rgba(141,109,109,1) 0%, rgba(235,192,193,1) 100%);
+  background-color: var(--old-rose);
   display: grid;
   grid-area: nav-bar;
   grid-template-rows: min-content 1fr;
@@ -26,6 +26,7 @@
   color: white;
   text-decoration: none;
   font-size: 16px;
+  font-weight: 700;
 }
 
 .nav-bar__link:hover {
