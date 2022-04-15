@@ -1,13 +1,13 @@
-.dashboard__subtitle {
+.dashboard__title {
   color: var(--primary-color);
   margin-bottom: 15px;
 }
-.dashboard__title {
+.dashboard__text {
   color: var(--third-color);
   margin-bottom: 30px;
   font-size: 21px;
 }
-.dashboard__card {
+.dashboard__resume {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
   justify-items: center;
@@ -21,7 +21,7 @@
 
 }
 
-.dashboard__resume {
+.dashboard__card {
   text-align: center;
   border-radius: 10px;
   box-shadow: var(--box-shadow);
@@ -35,16 +35,16 @@
   padding: 0 19px;
 }
 
-.dashboard__resume--primary-color {
+.dashboard__card--primary-color {
   background-color: var(--primary-color);
 }
-.dashboard__resume--secondary-color {
+.dashboard__card--secondary-color {
   background-color: var(--secondary-color);
 }
-.dashboard__resume--third-color {
+.dashboard__card--third-color {
   background-color: var(--third-color);
 }
-.dashboard__resume--old-rose-color {
+.dashboard__card--old-rose-color {
   background-color: var(--old-rose);
 }
 
