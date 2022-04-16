@@ -3,8 +3,8 @@ import "./card.css";
 
 const Card = ({ value, label, icon, color }) => (
   <div className={`card card--${color}-color`}>
-    {icon && <span className="card__icon">{icon}</span>}
-    <span className="card__value">{value}</span>
+    {!!icon && <div className="card__icon">{icon}</div>}
+    <div className="card__value">{value}</div>
     <h3 className="card__label">{label}</h3>
   </div>
 );
@@ -12,7 +12,7 @@ const Card = ({ value, label, icon, color }) => (
 Card.propTypes = {
   value: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  icon: PropTypes.string,
+  icon: PropTypes.object,
   color: PropTypes.oneOf(["primary", "secondary", "third", "old-rose"]),
 };
 
