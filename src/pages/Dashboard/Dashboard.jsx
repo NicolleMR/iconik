@@ -33,10 +33,64 @@ const Dashboard = () => (
       />
     </div>
     <div className="dashboard__grid">
-      <TableCard title="Últimos Ingresos" />
-      <TableCard title="Últimos Egresos" />
-      <TableCard title="Últimos Clientes" />
-      <TableCard title="Próximas Citas" />
+      <TableCard
+        title="Últimos Ingresos"
+        columnsName={[
+          "Cliente",
+          "Trabajador/a",
+          "Fecha",
+          "Valor",
+        ]}
+        rows={[
+          ["Motito", "Yurlaydis", "Abril 21", "$30000"],
+          ["Petesita", "Yurlaydis", "Abril 21", "$30000"],
+          ["Perrin", "Yurlaydis", "Abril 21", "$30000"],
+          ["La Pocho", "Yurlaydis", "Abril 21", "$30000"],
+        ]}
+      />
+      <TableCard
+        title="Últimos Egresos"
+        columnsName={[
+          "Proveedor",
+          "Descripción",
+          "Fecha",
+          "Valor",
+        ]}
+        rows={[
+          ["AAA", "Servicio Agua", "Abril 1", "$80000"],
+          ["Organic", "Compra esmaltes", "Abril 12", "$100000"],
+        ]}
+      />
+      <TableCard
+        title="Últimos Clientes"
+        columnsName={[
+          "Nombre",
+          "Celular",
+          "Cedula",
+          "Email",
+          "Sexo"
+        ]}
+        rows={[
+          ["Matthew Fontalvo", "3002341234", "114087264", "-", "Hombre"],
+          ["Valerie Fontalvo", "3202333234", "114087264", "-", "Mujer"],
+          ["Rosa Herrera", "3162331225", "24087264", "me@gmail.com", "Mujer"],
+        ]}
+      />
+      <TableCard
+        title="Próximas Citas"
+        columnsName={[
+          "Cliente",
+          "Trabajador/a",
+          "Fecha",
+          "Servicio",
+        ]}
+        rows={[
+          ["Motito", "Yurlaydis", "Abril 21", "Uñas - Acrilicas"],
+          ["Petesita", "Yurlaydis", "Abril 21", "Cejas y Pestañas"],
+          ["Perrin", "Yurlaydis", "Abril 21", "Uñas - Semipermanentes"],
+          ["La Pocho", "Yurlaydis", "Abril 21", "Uñas- Esculpidas"],
+        ]}
+      />
     </div>
   </div>
 );
