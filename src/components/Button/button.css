@@ -1,0 +1,20 @@
+.button__btn {
+  background-color: var(--old-rose);
+  color: white;
+  border: 1px solid var(--old-rose);
+  padding: 10px;
+  border-radius: 5px;
+  transition: 0.5s ease;
+  display: flex;
+  align-items: center;
+}
+
+.button__btn:hover {
+ text-decoration: underline;
+}
+
+.button__icon {
+  height: 12px;
+  width: 12px;
+  margin-left: 10px;
+}

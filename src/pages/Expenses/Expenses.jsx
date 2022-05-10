@@ -1,8 +1,28 @@
+import Card from "../../components/Card";
+import Table from "../../components/Table";
+import Button from "../../components/Button";
 import "./expenses.css";
 
 const Expenses = () => (
   <div>
-    Egresos
+    <Card>
+    <div className="expenses">
+      <h2 className="expenses__title">Egresos</h2>
+      <Button />
+    </div>
+    <Table
+      columnsName={[
+        "Provedor",
+        "Descripción",
+        "Fecha",
+        "Valor",
+      ]}
+      rows={[
+        ["Motito", "Yurlaydis", "Abril 21", "$80000"],
+        ["Petesita", "Yurlaydis", "Abril 21", "$100000"],
+      ]}
+    />
+  </Card> 
   </div>
 );
 
