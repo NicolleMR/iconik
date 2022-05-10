@@ -12,9 +12,3 @@
 .button__btn:hover {
  text-decoration: underline;
 }
-
-.button__icon {
-  height: 12px;
-  width: 12px;
-  margin-left: 10px;
-}

@@ -1,13 +1,16 @@
 import Card from "../../components/Card";
 import Table from "../../components/Table";
 import Button from "../../components/Button";
+import Icon from "../../components/Icon";
 import "./income.css";
 
 const Income = () => (
   <Card>
     <div className="income">
       <h2 className="income__title">Ingresos</h2>
-      <Button />
+      <Button>
+        Añadir Ingresos <Icon height={12} color="white" name="plus"/>
+      </Button>
     </div>
     <Table
       columnsName={[
