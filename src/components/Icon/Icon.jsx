@@ -21,6 +21,7 @@ Icon.propTypes = {
     "money-in",
     "money-out",
     "calendar-check",
+    "plus",
   ]).isRequired,
 };
 
