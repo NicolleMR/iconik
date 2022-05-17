@@ -1,6 +1,6 @@
 import "./button.css";
 
-const Button = ( {children} ) => (
+const Button = ({children}) => (
   <button className="button__btn">{children}</button>
 );
 
