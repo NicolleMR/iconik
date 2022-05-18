@@ -10,22 +10,17 @@ const Expenses = () => (
       <div className="expenses">
         <h2 className="expenses__title">Egresos</h2>
         <Button>
-          Añadir Ingresos <Icon height={12} color="white" name="plus"/>
+          Añadir Ingresos <Icon height={12} color="white" name="plus" />
         </Button>
       </div>
       <Table
-        columnsName={[
-          "Provedor",
-          "Descripción",
-          "Fecha",
-          "Valor",
-        ]}
+        columnsName={["Provedor", "Descripción", "Fecha", "Valor"]}
         rows={[
           ["Motito", "Yurlaydis", "Abril 21", "$80000"],
           ["Petesita", "Yurlaydis", "Abril 21", "$100000"],
         ]}
       />
-    </Card> 
+    </Card>
   </div>
 );
 

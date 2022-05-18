@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import SVG from 'react-inlinesvg';
+import SVG from "react-inlinesvg";
 import "./icon.css";
 
 const Icon = ({ width, height, name, color }) => (
@@ -16,19 +16,14 @@ Icon.propTypes = {
   width: PropTypes.number,
   height: PropTypes.number,
   color: PropTypes.string,
-  name: PropTypes.oneOf([
-    "group",
-    "money-in",
-    "money-out",
-    "calendar-check",
-    "plus",
-  ]).isRequired,
+  name: PropTypes.oneOf(["group", "money-in", "money-out", "calendar-check", "plus"])
+    .isRequired,
 };
 
 Icon.defaultProps = {
   width: 30,
   height: 30,
-  color: "black"
-}
+  color: "black",
+};
 
 export default Icon;

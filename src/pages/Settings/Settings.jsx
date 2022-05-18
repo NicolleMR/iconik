@@ -7,7 +7,7 @@ const Settings = () => (
       <div className="settings">
         <h2 className="settings__title">Configuración</h2>
       </div>
-    </Card> 
+    </Card>
   </div>
 );
 

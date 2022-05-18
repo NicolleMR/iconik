@@ -7,23 +7,14 @@ const Dashboard = () => (
     <h1 className="dashboard__title">Dashboard</h1>
     <div className="dashboard__text">Bienvenid@s a Iconik</div>
     <div className="dashboard__resume">
-      <ResumeCard
-        value="$1000000"
-        label="Ingresos"
-        iconName="money-in"
-      />
+      <ResumeCard value="$1000000" label="Ingresos" iconName="money-in" />
       <ResumeCard
         value="$4000000"
         label="Egresos"
         iconName="money-out"
         color="secondary"
       />
-      <ResumeCard
-        value="5"
-        label="Clientes"
-        iconName="group"
-        color="old-rose"
-      />
+      <ResumeCard value="5" label="Clientes" iconName="group" color="old-rose" />
       <ResumeCard
         value="10"
         label="Próximas Citas"
@@ -34,12 +25,7 @@ const Dashboard = () => (
     <div className="dashboard__grid">
       <TableCard
         title="Últimos Ingresos"
-        columnsName={[
-          "Cliente",
-          "Trabajador/a",
-          "Fecha",
-          "Valor",
-        ]}
+        columnsName={["Cliente", "Trabajador/a", "Fecha", "Valor"]}
         rows={[
           ["Motito", "Yurlaydis", "Abril 21", "$30000"],
           ["Petesita", "Yurlaydis", "Abril 21", "$30000"],
@@ -49,12 +35,7 @@ const Dashboard = () => (
       />
       <TableCard
         title="Últimos Egresos"
-        columnsName={[
-          "Proveedor",
-          "Descripción",
-          "Fecha",
-          "Valor",
-        ]}
+        columnsName={["Proveedor", "Descripción", "Fecha", "Valor"]}
         rows={[
           ["AAA", "Servicio Agua", "Abril 1", "$80000"],
           ["Organic", "Compra esmaltes", "Abril 12", "$100000"],
@@ -62,13 +43,7 @@ const Dashboard = () => (
       />
       <TableCard
         title="Últimos Clientes"
-        columnsName={[
-          "Nombre",
-          "Celular",
-          "Cedula",
-          "Email",
-          "Sexo"
-        ]}
+        columnsName={["Nombre", "Celular", "Cedula", "Email", "Sexo"]}
         rows={[
           ["Matthew Fontalvo", "3002341234", "114087264", "-", "Hombre"],
           ["Valerie Fontalvo", "3202333234", "114087264", "-", "Mujer"],
@@ -77,12 +52,7 @@ const Dashboard = () => (
       />
       <TableCard
         title="Próximas Citas"
-        columnsName={[
-          "Cliente",
-          "Trabajador/a",
-          "Fecha",
-          "Servicio",
-        ]}
+        columnsName={["Cliente", "Trabajador/a", "Fecha", "Servicio"]}
         rows={[
           ["Motito", "Yurlaydis", "Abril 21", "Uñas - Acrilicas"],
           ["Petesita", "Yurlaydis", "Abril 21", "Cejas y Pestañas"],
