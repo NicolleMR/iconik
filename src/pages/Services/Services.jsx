@@ -2,13 +2,13 @@ import Card from "../../components/Card";
 import Table from "../../components/Table";
 import Button from "../../components/Button";
 import Icon from "../../components/Icon";
-import "./appointment.css";
+import "./services.css";
 
-const Appointment = () => (
+const Services = () => (
   <div>
     <Card>
-      <div className="appointment">
-        <h2 className="appointment__title">Citas</h2>
+      <div className="services">
+        <h2 className="services__title">Citas</h2>
         <Button>
           Añadir Ingresos <Icon height={12} color="white" name="plus"/>
         </Button>
@@ -31,4 +31,4 @@ const Appointment = () => (
   </div>
 );
 
-export default Appointment;
+export default Services;
