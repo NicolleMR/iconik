@@ -1,4 +1,3 @@
-import Icon from "../../components/Icon";
 import ResumeCard from "../../components/ResumeCard";
 import TableCard from "../../components/TableCard";
 import "./dashboard.css";
@@ -11,24 +10,24 @@ const Dashboard = () => (
       <ResumeCard
         value="$1000000"
         label="Ingresos"
-        icon={<Icon name="money-in" color="white" width={40} height={40} />}
+        iconName="money-in"
       />
       <ResumeCard
         value="$4000000"
         label="Egresos"
-        icon={<Icon name="money-out" color="white" width={40} height={40} />}
+        iconName="money-out"
         color="secondary"
       />
       <ResumeCard
         value="5"
         label="Clientes"
-        icon={<Icon name="group" color="white" />}
+        iconName="group"
         color="old-rose"
       />
       <ResumeCard
         value="10"
         label="Próximas Citas"
-        icon={<Icon name="calendar-check" color="white" />}
+        iconName="calendar-check"
         color="third"
       />
     </div>

@@ -1,9 +1,14 @@
 import PropTypes from "prop-types";
+import Icon from "../Icon";
 import "./resume-card.css";
 
-const ResumeCard = ({ value, label, icon, color }) => (
+const ResumeCard = ({ value, label, iconName, color }) => (
   <div className={`resume-card resume-card--${color}-color`}>
-    {!!icon && <div className="resume-card__icon">{icon}</div>}
+    {!!iconName && (
+      <div className="resume-card__icon">
+        <Icon name={iconName} color="white" width={30} height={30} />
+      </div>
+    )}
     <div className="resume-card__value">{value}</div>
     <h3 className="resume-card__label">{label}</h3>
   </div>
@@ -12,12 +17,12 @@ const ResumeCard = ({ value, label, icon, color }) => (
 ResumeCard.propTypes = {
   value: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  icon: PropTypes.object,
+  iconName: PropTypes.string,
   color: PropTypes.oneOf(["primary", "secondary", "third", "old-rose"]),
 };
 
 ResumeCard.defaultProps = {
-  icon: "",
+  iconName: "",
   color: "primary",
 };
 
