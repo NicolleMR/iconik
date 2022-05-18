@@ -1,11 +1,11 @@
-.products {
+.services {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
 }
 
-.products__title {
+.services__title {
   color: var(--third-color);
   font-size: 20px;
   margin-bottom: 10px;
