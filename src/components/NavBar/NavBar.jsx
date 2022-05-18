@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import iconikLogo from "../../assets/images/iconik-logo.png";
-import "./nav-bar.css";
+import "./nav-bar.scss";
 
 const NavBar = () => (
   <div className="nav-bar">

@@ -1,0 +1,50 @@
+.resume-card {
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  height: 139px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  padding: 10px 19px;
+
+  &__icon {
+    position: absolute;
+    top: 10px;
+    left: 13px;
+  }
+
+  &__value {
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  &__value--currency {
+    font-size: 24px;
+  }
+
+  &__label {
+    color: white;
+    font-weight: 500;
+    margin-top: 13px;
+  }
+
+  &--primary-color {
+    background-color: var(--primary-color);
+  }
+
+  &--secondary-color {
+    background-color: var(--secondary-color);
+  }
+
+  &--third-color {
+    background-color: var(--third-color);
+  }
+
+  &--old-rose-color {
+    background-color: var(--old-rose);
+  }
+}

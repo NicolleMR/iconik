@@ -1,6 +1,6 @@
 import ResumeCard from "../../components/ResumeCard";
 import TableCard from "../../components/TableCard";
-import "./dashboard.css";
+import "./dashboard.scss";
 
 const Dashboard = () => (
   <div className="dashboard">

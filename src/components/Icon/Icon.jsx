@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import SVG from "react-inlinesvg";
-import "./icon.css";
 
 const Icon = ({ width, height, name, color }) => (
   <SVG

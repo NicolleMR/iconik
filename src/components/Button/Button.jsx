@@ -1,9 +1,9 @@
 /* eslint-disable react/button-has-type */
 import PropTypes from "prop-types";
-import "./button.css";
+import "./button.scss";
 
 const Button = ({ children, type }) => (
-  <button className="button__btn" type={type}>
+  <button className="button" type={type}>
     {children}
   </button>
 );

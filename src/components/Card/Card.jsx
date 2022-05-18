@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import "./card.css";
+import "./card.scss";
 
 const Card = ({ children }) => <div className="card">{children}</div>;
 

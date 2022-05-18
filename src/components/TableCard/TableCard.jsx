@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import Card from "../Card";
 import Table from "../Table";
-import "./table-card.css";
+import "./table-card.scss";
 
 const TableCard = ({ title, columnsName, rows }) => (
   <Card>
