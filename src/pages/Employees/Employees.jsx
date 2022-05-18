@@ -10,17 +10,11 @@ const Employees = () => (
       <div className="employees">
         <h2 className="employees__title">Trabajadores/as</h2>
         <Button>
-          Añadir Ingresos <Icon height={12} color="white" name="plus"/>
+          Añadir Ingresos <Icon height={12} color="white" name="plus" />
         </Button>
       </div>
       <Table
-        columnsName={[
-          "Nombre",
-          "Celular",
-          "Cedula",
-          "Email",
-          "Sexo",
-        ]}
+        columnsName={["Nombre", "Celular", "Cedula", "Email", "Sexo"]}
         rows={[
           ["Rosa", "3002458762", "50505050", "iconik@gmail.com", "mujer"],
           ["Olga", "3002458762", "50505050", "iconik@gmail.com", "mujer"],
@@ -28,7 +22,7 @@ const Employees = () => (
           ["Maria", "3002458762", "50505050", "iconik@gmail.com", "mujer"],
         ]}
       />
-    </Card> 
+    </Card>
   </div>
 );
 

@@ -10,16 +10,11 @@ const Services = () => (
       <div className="services">
         <h2 className="services__title">Citas</h2>
         <Button>
-          Añadir Ingresos <Icon height={12} color="white" name="plus"/>
+          Añadir Ingresos <Icon height={12} color="white" name="plus" />
         </Button>
       </div>
       <Table
-        columnsName={[
-          "Cliente",
-          "Trabajador/a",
-          "Fecha",
-          "Servicio",
-        ]}
+        columnsName={["Cliente", "Trabajador/a", "Fecha", "Servicio"]}
         rows={[
           ["Motito", "Yurlaydis", "Abril 21", "Uñas - Acrilicas"],
           ["Petesita", "Yurlaydis", "Abril 21", "Cejas y Pestañas"],
@@ -27,7 +22,7 @@ const Services = () => (
           ["La Pocho", "Yurlaydis", "Abril 21", "Uñas- Esculpidas"],
         ]}
       />
-    </Card> 
+    </Card>
   </div>
 );
 

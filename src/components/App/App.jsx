@@ -1,15 +1,11 @@
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "../../pages/Dashboard";
 import Income from "../../pages/Income";
 import Expenses from "../../pages/Expenses";
 import Employees from "../../pages/Employees";
 import Customers from "../../pages/Customers";
-import Services  from "../../pages/Services";
-import Settings  from "../../pages/Settings";
+import Services from "../../pages/Services";
+import Settings from "../../pages/Settings";
 import Header from "../Header";
 import NavBar from "../NavBar";
 import "./app.css";
@@ -17,8 +13,8 @@ import "./app.css";
 const App = () => (
   <BrowserRouter>
     <main className="main">
-      <NavBar/>
-      <Header/>
+      <NavBar />
+      <Header />
       <div className="main__content">
         <Routes>
           <Route path="/" element={<Dashboard />} />
@@ -33,5 +29,5 @@ const App = () => (
     </main>
   </BrowserRouter>
 );
-  
+
 export default App;
