@@ -2,7 +2,7 @@ import Card from "../../components/Card";
 import Table from "../../components/Table";
 import Button from "../../components/Button";
 import Icon from "../../components/Icon";
-import "./employees.css";
+import "./employees.scss";
 
 const Employees = () => (
   <div>

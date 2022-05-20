@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import "./table.css";
+import "./table.scss";
 
 const Table = ({ columnsName, rows }) => (
   <div className="table__container">

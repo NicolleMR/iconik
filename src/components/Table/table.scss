@@ -1,0 +1,27 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  &__container {
+    border: 1px solid var(--third-color);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  thead {
+    text-align: left;
+    border-bottom: 1px solid var(--third-color);
+    background-color: var(--third-color);
+    color: white;
+  }
+
+  tr:not(:last-child) {
+    border-bottom: 1px solid var(--third-color);
+  }
+
+  th,
+  td {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+}

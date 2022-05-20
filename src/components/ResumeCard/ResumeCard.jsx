@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import Icon from "../Icon";
-import "./resume-card.css";
+import "./resume-card.scss";
 
 const ResumeCard = ({ value, label, iconName, color }) => (
   <div className={`resume-card resume-card--${color}-color`}>

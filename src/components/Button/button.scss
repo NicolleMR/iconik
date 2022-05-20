@@ -1,4 +1,4 @@
-.button__btn {
+.button {
   background-color: var(--old-rose);
   color: white;
   border: 1px solid var(--old-rose);
@@ -7,8 +7,8 @@
   transition: 0.5s ease;
   display: flex;
   align-items: center;
-}
 
-.button__btn:hover {
-  text-decoration: underline;
+  &:hover {
+    text-decoration: underline;
+  }
 }

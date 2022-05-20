@@ -1,5 +1,5 @@
 import Card from "../../components/Card";
-import "./settings.css";
+import "./settings.scss";
 
 const Settings = () => (
   <div>
