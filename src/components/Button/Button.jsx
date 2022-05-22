@@ -2,8 +2,8 @@
 import PropTypes from "prop-types";
 import "./button.scss";
 
-const Button = ({ children, type }) => (
-  <button className="button" type={type}>
+const Button = ({ children, type, onClick }) => (
+  <button className="button" type={type} onClick={onClick}>
     {children}
   </button>
 );
@@ -11,6 +11,7 @@ const Button = ({ children, type }) => (
 Button.propTypes = {
   children: PropTypes.node.isRequired,
   type: PropTypes.string,
+  onClick: PropTypes.func.isRequired,
 };
 
 Button.defaultProps = {
