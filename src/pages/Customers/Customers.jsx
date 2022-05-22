@@ -34,7 +34,11 @@ const Customers = () => {
           ]}
         />
       </Card>
-      <Modal modalIsOpen={modalIsOpen} closeModal={closeModal}>
+      <Modal
+        modalIsOpen={modalIsOpen}
+        closeModal={closeModal}
+        label="Create Customer Modal"
+      >
         <h1>Hola!</h1>
       </Modal>
     </div>
