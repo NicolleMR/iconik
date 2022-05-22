@@ -11,11 +11,12 @@ const Button = ({ children, type, onClick }) => (
 Button.propTypes = {
   children: PropTypes.node.isRequired,
   type: PropTypes.string,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
 };
 
 Button.defaultProps = {
   type: "button",
+  onClick: () => {},
 };
 
 export default Button;
