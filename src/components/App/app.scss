@@ -6,10 +6,10 @@
   grid-template-columns: 180px 1fr;
   height: 100vh;
   grid-template-rows: 60px 1fr;
-}
 
-.main__content {
-  grid-area: content;
-  background-color: var(--main-bg);
-  padding: 30px 20px;
+  &__content {
+    grid-area: content;
+    background-color: var(--main-bg);
+    padding: 30px 20px;
+  }
 }

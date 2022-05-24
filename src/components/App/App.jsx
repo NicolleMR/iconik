@@ -8,7 +8,7 @@ import Services from "../../pages/Services";
 import Settings from "../../pages/Settings";
 import Header from "../Header";
 import NavBar from "../NavBar";
-import "./app.css";
+import "./app.scss";
 
 const App = () => (
   <BrowserRouter>
