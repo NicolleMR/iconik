@@ -7,7 +7,7 @@ import Icon from "../../components/Icon";
 import "./customers.scss";
 
 const Customers = () => {
-  const [modalIsOpen, setIsOpen] = useState(false);
+  const [isModalOpen, setIsOpen] = useState(false);
   const closeModal = () => {
     setIsOpen(false);
   };
@@ -35,7 +35,7 @@ const Customers = () => {
         />
       </Card>
       <Modal
-        modalIsOpen={modalIsOpen}
+        isModalOpen={isModalOpen}
         closeModal={closeModal}
         label="Create Customer Modal"
       >

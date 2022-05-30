@@ -5,7 +5,7 @@ import "./modal.scss";
 ReactModal.setAppElement("#root");
 
 const Modal = ({
-  modalIsOpen,
+  isModalOpen,
   closeModal,
   children,
   label,
@@ -13,7 +13,7 @@ const Modal = ({
   overlayClassName,
 }) => (
   <ReactModal
-    isOpen={modalIsOpen}
+    isOpen={isModalOpen}
     onRequestClose={closeModal}
     contentLabel={label}
     className={`modal ${className}`}
@@ -24,7 +24,7 @@ const Modal = ({
 );
 
 Modal.propTypes = {
-  modalIsOpen: PropTypes.bool.isRequired,
+  isModalOpen: PropTypes.bool.isRequired,
   closeModal: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
   label: PropTypes.string.isRequired,
