@@ -7,9 +7,9 @@ import Icon from "../../components/Icon";
 import "./customers.scss";
 
 const Customers = () => {
-  const [isModalOpen, setIsOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const closeModal = () => {
-    setIsOpen(false);
+    setIsModalOpen(false);
   };
   return (
     <div>
@@ -18,7 +18,7 @@ const Customers = () => {
           <h2 className="customers__title">Clientes</h2>
           <Button
             onClick={() => {
-              setIsOpen(true);
+              setIsModalOpen(true);
             }}
           >
             Añadir Ingresos <Icon height={12} color="white" name="plus" />
