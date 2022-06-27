@@ -12,7 +12,7 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "airbnb",
-    "eslint-config-prettier"
+    "eslint-config-prettier",
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -24,6 +24,8 @@ module.exports = {
   plugins: ["react"],
   rules: {
     "react/react-in-jsx-scope": "off",
+    "react/no-array-index-key": "off",
+    "react/jsx-props-no-spreading": "off",
     "no-restricted-exports": "off",
     "react/function-component-definition": "off",
     "import/no-dynamic-require": "off",

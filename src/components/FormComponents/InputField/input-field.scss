@@ -1,0 +1,35 @@
+.input-field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2px;
+  padding-bottom: 15px;
+
+  &__input {
+    border-radius: 5px;
+    padding: 8px 10px;
+    width: 100%;
+
+    .has-error & {
+      border-color: var(--error-color);
+    }
+  }
+
+  &__label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--third-color);
+
+    .has-error & {
+      color: var(--error-color);
+    }
+  }
+
+  &__error {
+    color: var(--error-color);
+    position: absolute;
+    bottom: -2px;
+    left: 2px;
+    font-size: 12px;
+  }
+}

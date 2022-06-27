@@ -1,16 +1,13 @@
-import { useState } from "react";
-import Modal from "../../components/Modal";
 import Card from "../../components/Card";
 import Table from "../../components/Table";
 import Button from "../../components/Button";
 import Icon from "../../components/Icon";
+import { ModalContext, modalType } from "../../contexts/Modal";
 import "./customers.scss";
 
 const Customers = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+  const { openModal } = ModalContext();
+
   return (
     <div>
       <Card>
@@ -18,10 +15,10 @@ const Customers = () => {
           <h2 className="customers__title">Clientes</h2>
           <Button
             onClick={() => {
-              setIsModalOpen(true);
+              openModal({ type: modalType.CREATE_CUSTOMER });
             }}
           >
-            Añadir Ingresos <Icon height={12} color="white" name="plus" />
+            Agregar Cliente <Icon height={12} color="white" name="plus" />
           </Button>
         </div>
         <Table
@@ -34,13 +31,6 @@ const Customers = () => {
           ]}
         />
       </Card>
-      <Modal
-        isModalOpen={isModalOpen}
-        closeModal={closeModal}
-        label="Create Customer Modal"
-      >
-        <h1>Hola!</h1>
-      </Modal>
     </div>
   );
 };

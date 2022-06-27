@@ -6,16 +6,16 @@ const Table = ({ columnsName, rows }) => (
     <table className="table">
       <thead>
         <tr>
-          {columnsName.map((columnName) => (
-            <th>{columnName}</th>
+          {columnsName.map((columnName, i) => (
+            <th key={`head-${i}-${columnName}`}>{columnName}</th>
           ))}
         </tr>
       </thead>
       <tbody>
-        {rows.map((row) => (
-          <tr>
-            {row.map((value) => (
-              <td>{value}</td>
+        {rows.map((row, i) => (
+          <tr key={`row-${i}`}>
+            {row.map((value, j) => (
+              <td key={`cell-${j}`}>{value}</td>
             ))}
           </tr>
         ))}

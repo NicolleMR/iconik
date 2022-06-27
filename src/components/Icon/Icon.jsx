@@ -15,8 +15,14 @@ Icon.propTypes = {
   width: PropTypes.number,
   height: PropTypes.number,
   color: PropTypes.string,
-  name: PropTypes.oneOf(["group", "money-in", "money-out", "calendar-check", "plus"])
-    .isRequired,
+  name: PropTypes.oneOf([
+    "group",
+    "money-in",
+    "money-out",
+    "calendar-check",
+    "plus",
+    "clear",
+  ]).isRequired,
 };
 
 Icon.defaultProps = {
