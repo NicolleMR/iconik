@@ -6,7 +6,7 @@ const ResumeCard = ({ value, label, iconName, color }) => (
   <div className={`resume-card resume-card--${color}-color`}>
     {!!iconName && (
       <div className="resume-card__icon">
-        <Icon name={iconName} color="white" width={30} height={30} />
+        <Icon name={iconName} width={30} height={30} />
       </div>
     )}
     <div className="resume-card__value">{value}</div>

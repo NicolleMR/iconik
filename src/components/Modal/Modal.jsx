@@ -22,7 +22,7 @@ const Modal = ({
     overlayClassName={`modal__overlay ${overlayClassName}`}
   >
     <button type="button" className="modal__close-btn" onClick={() => closeModal()}>
-      <Icon name="clear" />
+      <Icon name="clear" color="black" />
     </button>
     <h2>{title}</h2>
     {children}

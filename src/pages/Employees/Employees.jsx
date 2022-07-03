@@ -1,29 +1,135 @@
-import Card from "../../components/Card";
-import Table from "../../components/Table";
-import Button from "../../components/Button";
-import Icon from "../../components/Icon";
+import Card from "components/Card";
+import Table from "components/Table";
+import Button from "components/Button";
+import Icon from "components/Icon";
+import { ModalContext, modalType } from "contexts/Modal";
 import "./employees.scss";
 
-const Employees = () => (
-  <div>
-    <Card>
-      <div className="employees">
-        <h2 className="employees__title">Trabajadores/as</h2>
-        <Button>
-          Añadir Ingresos <Icon height={12} color="white" name="plus" />
-        </Button>
-      </div>
-      <Table
-        columnsName={["Nombre", "Celular", "Cedula", "Email", "Sexo"]}
-        rows={[
-          ["Rosa", "3002458762", "50505050", "iconik@gmail.com", "mujer"],
-          ["Olga", "3002458762", "50505050", "iconik@gmail.com", "mujer"],
-          ["Eli", "3002458762", "50505050", "iconik@gmail.com", "mujer"],
-          ["Maria", "3002458762", "50505050", "iconik@gmail.com", "mujer"],
-        ]}
-      />
-    </Card>
-  </div>
-);
+const Employees = () => {
+  const { openModal } = ModalContext();
+
+  return (
+    <div>
+      <Card>
+        <div className="employees">
+          <h2 className="employees__title">
+            <Icon height={24} width={24} name="employee" />
+            Trabajadores/as
+          </h2>
+          <Button
+            onClick={() => {
+              openModal({ type: modalType.CREATE_CUSTOMER });
+            }}
+          >
+            Añadir Trabajador/a <Icon height={12} name="plus" />
+          </Button>
+        </div>
+        <Table
+          columnsName={[
+            "Cedula",
+            "Nombre",
+            "Apellido",
+            <div>
+              <Icon height={16} width={16} name="location" />
+              Dirección
+            </div>,
+            <div>
+              <Icon height={16} width={16} name="mobile" />
+              Celular
+            </div>,
+            <div>
+              <Icon height={16} width={16} name="money-in" />
+              Forma de pago
+            </div>,
+            "# de cuenta",
+            "Sexo",
+          ]}
+          rows={[
+            [
+              "1148147822",
+              "Olga Yaneth",
+              "Diaz Vargas",
+              "Cra 27 # 85a - 52 El Eden",
+              "3213947814",
+              "Bancolombia a la mano",
+              "03213947814",
+              "Mujer",
+            ],
+            [
+              "1048147822",
+              "Olga Yaneth",
+              "Diaz Vargas",
+              "Cra 27 # 85a - 52 El Eden",
+              "3213947814",
+              "Bancolombia a la mano",
+              "03213947814",
+              "Mujer",
+            ],
+            [
+              "1148147822",
+              "Olga Yaneth",
+              "Diaz Vargas",
+              "Cra 27 # 85a - 52 El Eden",
+              "3213947814",
+              "Bancolombia a la mano",
+              "03213947814",
+              "Mujer",
+            ],
+            [
+              "1148147822",
+              "Olga Yaneth",
+              "Diaz Vargas",
+              "Cra 27 # 85a - 52 El Eden",
+              "3213947814",
+              "Bancolombia a la mano",
+              "03213947814",
+              "Mujer",
+            ],
+            [
+              "1148147822",
+              "Olga Yaneth",
+              "Diaz Vargas",
+              "Cra 27 # 85a - 52 El Eden",
+              "3213947814",
+              "Bancolombia a la mano",
+              "03213947814",
+              "Mujer",
+            ],
+            [
+              "1148147822",
+              "Olga Yaneth",
+              "Diaz Vargas",
+              "Cra 27 # 85a - 52 El Eden",
+              "3213947814",
+              "Bancolombia a la mano",
+              "03213947814",
+              "Mujer",
+            ],
+            [
+              "1148147822",
+              "Olga Yaneth",
+              "Diaz Vargas",
+              "Cra 27 # 85a - 52 El Eden",
+              "3213947814",
+              "Bancolombia a la mano",
+              "03213947814",
+              "Mujer",
+            ],
+            [
+              "1148147822",
+              "Olga Yaneth",
+              "Diaz Vargas",
+              "Cra 27 # 85a - 52 El Eden",
+              "3213947814",
+              "Bancolombia a la mano",
+              "03213947814",
+              "Mujer",
+            ],
+          ]}
+        />
+      </Card>
+    </div>
+  );
+};
 
 export default Employees;

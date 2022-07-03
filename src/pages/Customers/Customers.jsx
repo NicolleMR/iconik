@@ -1,8 +1,8 @@
-import Card from "../../components/Card";
-import Table from "../../components/Table";
-import Button from "../../components/Button";
-import Icon from "../../components/Icon";
-import { ModalContext, modalType } from "../../contexts/Modal";
+import Card from "components/Card";
+import Table from "components/Table";
+import Button from "components/Button";
+import Icon from "components/Icon";
+import { ModalContext, modalType } from "contexts/Modal";
 import "./customers.scss";
 
 const Customers = () => {
@@ -12,26 +12,28 @@ const Customers = () => {
     <div>
       <Card>
         <div className="customers">
-          <h2 className="customers__title">Clientes</h2>
+          <h2 className="customers__title">
+            <Icon height={24} width={24} name="group" />
+            Clientes
+          </h2>
           <Button
             onClick={() => {
               openModal({ type: modalType.CREATE_CUSTOMER });
             }}
           >
-            Agregar Cliente <Icon height={12} color="white" name="plus" />
+            Agregar Cliente <Icon height={12} name="plus" />
           </Button>
         </div>
         <Table
-          className="customers__table"
           columnsName={[
             "Cedula",
             "Nombre",
             <div>
-              <Icon height={16} width={16} color="white" name="mobile" />
+              <Icon height={16} width={16} name="mobile" />
               Celular
             </div>,
             <div>
-              <Icon height={16} width={16} color="white" name="email" />
+              <Icon height={16} width={16} name="email" />
               Email
             </div>,
             "Fecha de nacimiento",

@@ -1,16 +1,19 @@
-import Card from "../../components/Card";
-import Table from "../../components/Table";
-import Button from "../../components/Button";
-import Icon from "../../components/Icon";
+import Card from "components/Card";
+import Table from "components/Table";
+import Button from "components/Button";
+import Icon from "components/Icon";
 import "./expenses.scss";
 
 const Expenses = () => (
   <div>
     <Card>
       <div className="expenses">
-        <h2 className="expenses__title">Egresos</h2>
+        <h2 className="expenses__title">
+          <Icon height={24} width={24} name="money-out" />
+          Egresos
+        </h2>
         <Button>
-          Añadir Ingresos <Icon height={12} color="white" name="plus" />
+          Añadir Ingresos <Icon height={12} name="plus" />
         </Button>
       </div>
       <Table

@@ -23,7 +23,7 @@ const NavBar = () => (
           className={({ isActive }) => `nav-bar__link ${isActive ? "is-active" : ""}`}
           to={route}
         >
-          <Icon name={iconName} color="white" width={20} height={20} />
+          <Icon name={iconName} width={20} height={20} />
           {name}
         </NavLink>
       ))}

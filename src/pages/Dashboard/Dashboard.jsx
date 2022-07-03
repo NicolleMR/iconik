@@ -1,10 +1,14 @@
-import ResumeCard from "../../components/ResumeCard";
-import TableCard from "../../components/TableCard";
+import ResumeCard from "components/ResumeCard";
+import TableCard from "components/TableCard";
+import Icon from "components/Icon";
 import "./dashboard.scss";
 
 const Dashboard = () => (
   <div className="dashboard">
-    <h1 className="dashboard__title">Dashboard</h1>
+    <h1 className="dashboard__title">
+      <Icon height={24} width={24} name="dashboard" />
+      Dashboard
+    </h1>
     <div className="dashboard__text">Bienvenid@s a Iconik</div>
     <div className="dashboard__resume">
       <ResumeCard value="$1000000" label="Ingresos" iconName="money-in" />

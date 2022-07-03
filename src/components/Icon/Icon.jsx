@@ -23,6 +23,7 @@ Icon.propTypes = {
     "email",
     "employee",
     "group",
+    "location",
     "mobile",
     "money-in",
     "money-out",
@@ -34,7 +35,7 @@ Icon.propTypes = {
 Icon.defaultProps = {
   width: 30,
   height: 30,
-  color: "black",
+  color: "white",
 };
 
 export default Icon;

@@ -8,14 +8,11 @@
     color: var(--third-color);
     font-size: 20px;
     margin-bottom: 10px;
-  }
-  &__table {
-    th {
-      div {
-        display: flex;
-        align-items: center;
-        column-gap: 5px;
-      }
+    display: flex;
+    column-gap: 7px;
+
+    svg {
+      fill: var(--third-color) !important;
     }
   }
 }

@@ -2,9 +2,9 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./components/App";
-import ModalFactory from "./components/ModalFactory";
-import { ModalProvider } from "./contexts/Modal";
+import App from "components/App";
+import ModalFactory from "components/ModalFactory";
+import { ModalProvider } from "contexts/Modal";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

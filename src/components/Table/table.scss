@@ -21,6 +21,11 @@
 
   th {
     text-transform: uppercase;
+    div {
+      display: flex;
+      align-items: center;
+      column-gap: 5px;
+    }
   }
 
   th,
