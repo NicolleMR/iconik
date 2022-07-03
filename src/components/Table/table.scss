@@ -19,6 +19,10 @@
     border-bottom: 1px solid var(--third-color);
   }
 
+  th {
+    text-transform: uppercase;
+  }
+
   th,
   td {
     padding: 10px 15px;

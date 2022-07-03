@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import "./table.scss";
 
-const Table = ({ columnsName, rows }) => (
-  <div className="table__container">
+const Table = ({ className, columnsName, rows }) => (
+  <div className={`table__container ${className}`}>
     <table className="table">
       <thead>
         <tr>
@@ -25,8 +25,13 @@ const Table = ({ columnsName, rows }) => (
 );
 
 Table.propTypes = {
+  className: PropTypes.string,
   columnsName: PropTypes.arrayOf(PropTypes.string).isRequired,
   rows: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
+};
+
+Table.defaultProps = {
+  className: "",
 };
 
 export default Table;
