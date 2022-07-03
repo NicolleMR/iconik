@@ -3,13 +3,13 @@
   display: grid;
   grid-area: nav-bar;
   grid-template-rows: min-content 1fr;
-  justify-content: center;
 
   &__logo {
     width: 120px;
     padding: 30px 0 0;
     justify-items: center;
     object-fit: cover;
+    margin: auto;
   }
 
   &__menu {
@@ -17,7 +17,6 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 30px 0;
-    grid-row-gap: 35px;
   }
 
   &__link {
@@ -29,12 +28,17 @@
     display: flex;
     align-items: center;
     column-gap: 8px;
-    opacity: 0.5;
     transition: 0.3s;
+    width: 100%;
+    padding: 15px 20px;
 
-    &:hover,
     &.is-active {
-      opacity: 1;
+      background: white;
+      color: var(--old-rose);
+
+      svg {
+        fill: var(--old-rose) !important;
+      }
     }
   }
 }
