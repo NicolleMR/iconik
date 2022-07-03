@@ -18,7 +18,7 @@ const Employees = () => {
           </h2>
           <Button
             onClick={() => {
-              openModal({ type: modalType.CREATE_CUSTOMER });
+              openModal({ type: modalType.CREATE_EMPLOYEE });
             }}
           >
             Añadir Trabajador/a <Icon height={12} name="plus" />
@@ -42,7 +42,7 @@ const Employees = () => {
               Forma de pago
             </div>,
             "# de cuenta",
-            "Sexo",
+            "Género",
           ]}
           rows={[
             [

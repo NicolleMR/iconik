@@ -3,9 +3,9 @@ import { useForm } from "react-hook-form";
 import Modal from "components/Modal";
 import Button from "components/Button";
 import InputField from "components/FormComponents/InputField";
-import "./create-customer-modal.scss";
+import "./create-employee-modal.scss";
 
-const CreateCustomerModal = ({ isModalOpen, closeModal }) => {
+const CreateEmployeeModal = ({ isModalOpen, closeModal }) => {
   const {
     register,
     handleSubmit,
@@ -18,9 +18,9 @@ const CreateCustomerModal = ({ isModalOpen, closeModal }) => {
     <Modal
       isModalOpen={isModalOpen}
       closeModal={closeModal}
-      className="create-customer-modal"
-      label="Create Customer Modal"
-      title="Crear Cliente"
+      className="create-employee-modal"
+      label="Create Employee Modal"
+      title="Crear Trabajador"
     >
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="create-customer-modal__container">
@@ -46,6 +46,13 @@ const CreateCustomerModal = ({ isModalOpen, closeModal }) => {
             isRequired
           />
           <InputField
+            name="address"
+            label="Dirección"
+            register={register}
+            error={errors.address?.message}
+            isRequired
+          />
+          <InputField
             name="mobileNumber"
             label="Celular"
             register={register}
@@ -53,30 +60,25 @@ const CreateCustomerModal = ({ isModalOpen, closeModal }) => {
             isRequired
           />
           <InputField
-            name="email"
-            label="Email"
-            type="email"
-            register={register}
-            error={errors.email?.message}
-          />
-          <InputField
-            name="dob"
-            type="date"
-            label="Feche de nacimiento"
-            register={register}
-            error={errors.neighborhood?.message}
-          />
-          <InputField
-            name="neighborhood"
-            label="Barrio"
-            register={register}
-            error={errors.neighborhood?.message}
-          />
-          <InputField
             name="gender"
             label="Género"
             register={register}
-            error={errors.gender?.message}
+            error={errors.mobileNumber?.message}
+            isRequired
+          />
+          <InputField
+            name="paymentMethod"
+            label="Forma de pago"
+            register={register}
+            error={errors.mobileNumber?.message}
+            isRequired
+          />
+          <InputField
+            name="accountNumber"
+            label="Número de cuenta"
+            register={register}
+            error={errors.mobileNumber?.message}
+            isRequired
           />
         </div>
         <Button type="submit" className="create-customer-modal__button">
@@ -87,9 +89,9 @@ const CreateCustomerModal = ({ isModalOpen, closeModal }) => {
   );
 };
 
-CreateCustomerModal.propTypes = {
+CreateEmployeeModal.propTypes = {
   isModalOpen: PropTypes.bool.isRequired,
   closeModal: PropTypes.func.isRequired,
 };
 
-export default CreateCustomerModal;
+export default CreateEmployeeModal;

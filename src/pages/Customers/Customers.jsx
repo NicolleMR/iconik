@@ -38,7 +38,7 @@ const Customers = () => {
             </div>,
             "Fecha de nacimiento",
             "Barrio",
-            "Sexo",
+            "Género",
           ]}
           rows={[
             [
