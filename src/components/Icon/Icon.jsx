@@ -16,12 +16,18 @@ Icon.propTypes = {
   height: PropTypes.number,
   color: PropTypes.string,
   name: PropTypes.oneOf([
+    "calendar-check",
+    "clear",
+    "config",
+    "dashboard",
+    "email",
+    "employee",
     "group",
+    "mobile",
     "money-in",
     "money-out",
-    "calendar-check",
     "plus",
-    "clear",
+    "services",
   ]).isRequired,
 };
 
