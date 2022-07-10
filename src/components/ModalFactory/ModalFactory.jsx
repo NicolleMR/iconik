@@ -1,6 +1,6 @@
 import { ModalContext, modalType } from "contexts/Modal";
-import CreateCustomerModal from "components/Modals/CreateCustomerModal";
-import CreateEmployeeModal from "components/Modals/CreateEmployeeModal";
+import CustomerModal from "components/Modals/CustomerModal";
+import EmployeeModal from "components/Modals/EmployeeModal";
 
 const ModalFactory = () => {
   const { modal, openModal } = ModalContext();
@@ -11,9 +11,9 @@ const ModalFactory = () => {
 
   switch (modal?.type) {
     case modalType.CREATE_CUSTOMER:
-      return <CreateCustomerModal isModalOpen closeModal={() => closeModal()} />;
+      return <CustomerModal isModalOpen closeModal={() => closeModal()} />;
     case modalType.CREATE_EMPLOYEE:
-      return <CreateEmployeeModal isModalOpen closeModal={() => closeModal()} />;
+      return <EmployeeModal isModalOpen closeModal={() => closeModal()} />;
     case modalType.NONE:
     default:
       return null;

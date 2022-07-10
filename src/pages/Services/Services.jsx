@@ -17,12 +17,12 @@ const Services = () => (
         </Button>
       </div>
       <Table
-        columnsName={["Cliente", "Trabajador/a", "Fecha", "Servicio"]}
+        columnsName={["Nombre", "valor"]}
         rows={[
-          ["Motito", "Yurlaydis", "Abril 21", "Uñas - Acrilicas"],
-          ["Petesita", "Yurlaydis", "Abril 21", "Cejas y Pestañas"],
-          ["Perrin", "Yurlaydis", "Abril 21", "Uñas - Semipermanentes"],
-          ["La Pocho", "Yurlaydis", "Abril 21", "Uñas- Esculpidas"],
+          ["Uñas Esculpidas", "$85.000"],
+          ["Uñas Acrilicas", "$75.000"],
+          ["Uñas Semipermanentes", "$35.000"],
+          ["Uñas tradicional", "$12.000"],
         ]}
       />
     </Card>
