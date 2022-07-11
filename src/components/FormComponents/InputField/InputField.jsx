@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import Label from "components/FormComponents/Label";
 import "./input-field.scss";
 
 const Input = ({ register, name, label, error, isRequired, ...rest }) => {
@@ -7,9 +8,7 @@ const Input = ({ register, name, label, error, isRequired, ...rest }) => {
   });
   return (
     <div className={`input-field ${error ? "has-error" : ""}`}>
-      <label htmlFor={name} className="input-field__label">
-        {label}
-      </label>
+      <Label htmlFor={name}>{label}</Label>
       <input id={name} className="input-field__input" {...config} {...rest} />
       {error && <span className="input-field__error">{error}</span>}
     </div>

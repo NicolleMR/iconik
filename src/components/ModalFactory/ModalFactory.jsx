@@ -10,9 +10,15 @@ const ModalFactory = () => {
   };
 
   switch (modal?.type) {
-    case modalType.CREATE_CUSTOMER:
-      return <CustomerModal isModalOpen closeModal={() => closeModal()} />;
-    case modalType.CREATE_EMPLOYEE:
+    case modalType.CUSTOMER:
+      return (
+        <CustomerModal
+          isModalOpen
+          closeModal={() => closeModal()}
+          selectedCustomer={modal?.props?.customer}
+        />
+      );
+    case modalType.EMPLOYEE:
       return <EmployeeModal isModalOpen closeModal={() => closeModal()} />;
     case modalType.NONE:
     default:

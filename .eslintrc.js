@@ -35,5 +35,8 @@ module.exports = {
     "react/function-component-definition": "off",
     "import/no-dynamic-require": "off",
     "global-require": "off",
+    "import/prefer-default-export": "off",
+    "react/forbid-prop-types": "off",
+    "no-debugger": "off",
   },
 };

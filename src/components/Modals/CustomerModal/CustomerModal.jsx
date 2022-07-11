@@ -3,16 +3,31 @@ import { useForm } from "react-hook-form";
 import Modal from "components/Modal";
 import Button from "components/Button";
 import InputField from "components/FormComponents/InputField";
+import Select from "components/FormComponents/Select";
+import { capitalize } from "utils/string";
 import "./customer-modal.scss";
 
-const CustomerModal = ({ isModalOpen, closeModal }) => {
+const CustomerModal = ({ isModalOpen, closeModal, selectedCustomer }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+    control,
+  } = useForm({
+    defaultValues: selectedCustomer
+      ? {
+          ...selectedCustomer,
+          gender: {
+            value: selectedCustomer.gender,
+            label: capitalize(selectedCustomer.gender),
+          },
+        }
+      : {},
+  });
 
-  const onSubmit = () => {};
+  const onSubmit = (values) => {
+    console.log("values", values);
+  };
 
   return (
     <Modal
@@ -46,10 +61,10 @@ const CustomerModal = ({ isModalOpen, closeModal }) => {
             isRequired
           />
           <InputField
-            name="mobileNumber"
+            name="cellphone"
             label="Celular"
             register={register}
-            error={errors.mobileNumber?.message}
+            error={errors.cellphone?.message}
             isRequired
           />
           <InputField
@@ -72,11 +87,17 @@ const CustomerModal = ({ isModalOpen, closeModal }) => {
             register={register}
             error={errors.neighborhood?.message}
           />
-          <InputField
+          <Select
             name="gender"
             label="Género"
-            register={register}
+            control={control}
             error={errors.gender?.message}
+            placeholder="Selecciona un genero"
+            options={[
+              { value: "hombre", label: "Hombre" },
+              { value: "mujer", label: "Mujer" },
+            ]}
+            isRequired
           />
         </div>
         <Button type="submit" className="customer-modal__button">
@@ -90,6 +111,20 @@ const CustomerModal = ({ isModalOpen, closeModal }) => {
 CustomerModal.propTypes = {
   isModalOpen: PropTypes.bool.isRequired,
   closeModal: PropTypes.func.isRequired,
+  selectedCustomer: PropTypes.shape({
+    id: PropTypes.string,
+    firstName: PropTypes.string,
+    lastName: PropTypes.string,
+    cellphone: PropTypes.string,
+    email: PropTypes.string,
+    dob: PropTypes.string,
+    neighborhood: PropTypes.string,
+    gender: PropTypes.string,
+  }),
+};
+
+CustomerModal.defaultProps = {
+  selectedCustomer: null,
 };
 
 export default CustomerModal;

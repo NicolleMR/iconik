@@ -15,16 +15,6 @@
     }
   }
 
-  &__label {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--third-color);
-
-    .has-error & {
-      color: var(--error-color);
-    }
-  }
-
   &__error {
     color: var(--error-color);
     position: absolute;

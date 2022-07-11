@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 
 export const modalType = {
   NONE: "none",
-  CREATE_CUSTOMER: "create-customer",
-  CREATE_EMPLOYEE: "create-employee",
+  CUSTOMER: "customer",
+  EMPLOYEE: "employee",
 };
 
 const Context = React.createContext({

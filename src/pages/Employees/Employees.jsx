@@ -18,7 +18,7 @@ const Employees = () => {
           </h2>
           <Button
             onClick={() => {
-              openModal({ type: modalType.CREATE_EMPLOYEE });
+              openModal({ type: modalType.EMPLOYEE });
             }}
           >
             Añadir Trabajador/a <Icon height={12} name="plus" />

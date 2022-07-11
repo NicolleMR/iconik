@@ -26,8 +26,12 @@ const Table = ({ className, columnsName, rows }) => (
 
 Table.propTypes = {
   className: PropTypes.string,
-  columnsName: PropTypes.arrayOf(PropTypes.string).isRequired,
-  rows: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
+  columnsName: PropTypes.arrayOf(
+    PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  ).isRequired,
+  rows: PropTypes.arrayOf(
+    PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.element])),
+  ).isRequired,
 };
 
 Table.defaultProps = {

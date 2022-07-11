@@ -1,0 +1,38 @@
+.select {
+  font-family: "cera-pro", sans-serif;
+  &__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2px;
+    padding-bottom: 15px;
+  }
+
+  &__error {
+    color: var(--error-color);
+    position: absolute;
+    bottom: -2px;
+    left: 2px;
+    font-size: 12px;
+  }
+
+  & &__control,
+  & &__control--is-focused,
+  & &__control:hover {
+    border-color: black;
+    box-shadow: none;
+    min-height: unset;
+    height: 36.5px;
+  }
+  & &__single-value,
+  & &__input-container,
+  & &__indicator,
+  & &__indicator:hover {
+    color: black;
+    font-family: "cera-pro", sans-serif;
+  }
+
+  & &__option--is-selected {
+    background-color: var(--old-rose);
+  }
+}

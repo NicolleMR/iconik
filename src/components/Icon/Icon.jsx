@@ -20,6 +20,7 @@ Icon.propTypes = {
     "clear",
     "config",
     "dashboard",
+    "edit",
     "email",
     "employee",
     "group",

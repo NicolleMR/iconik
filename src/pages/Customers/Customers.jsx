@@ -3,10 +3,29 @@ import Table from "components/Table";
 import Button from "components/Button";
 import Icon from "components/Icon";
 import { ModalContext, modalType } from "contexts/Modal";
+import { formatRows } from "utils/table";
+import data from "./mockData";
 import "./customers.scss";
 
 const Customers = () => {
   const { openModal } = ModalContext();
+  const formattedData = data.map(({ id, firstName, lastName, ...rest }) => ({
+    id,
+    name: `${firstName} ${lastName}`,
+    ...rest,
+  }));
+  const formattedRows = formatRows(formattedData);
+  const rowsWithEditButton = formattedRows.map((row, index) => [
+    ...row,
+    <button
+      type="button"
+      onClick={() =>
+        openModal({ type: modalType.CUSTOMER, props: { customer: data[index] } })
+      }
+    >
+      <Icon name="edit" height={20} width={20} />
+    </button>,
+  ]);
 
   return (
     <div>
@@ -18,7 +37,7 @@ const Customers = () => {
           </h2>
           <Button
             onClick={() => {
-              openModal({ type: modalType.CREATE_CUSTOMER });
+              openModal({ type: modalType.CUSTOMER });
             }}
           >
             Agregar Cliente <Icon height={12} name="plus" />
@@ -39,54 +58,9 @@ const Customers = () => {
             "Fecha de nacimiento",
             "Barrio",
             "Género",
+            "",
           ]}
-          rows={[
-            [
-              "1140876361",
-              "Jorge Monroy",
-              "301241036",
-              "jlmonroy13@gmail.com",
-              "13 Septiembre",
-              "Altos del prado",
-              "Hombre",
-            ],
-            [
-              "940186361",
-              "Lina Perez",
-              "304243039",
-              "linap@gmail.com",
-              "15 Marzo",
-              "Jumbo",
-              "Mujer",
-            ],
-            [
-              "10020186361",
-              "Tatiana Ruiz",
-              "311253038",
-              "tatiruiz@gmail.com",
-              "2 Febrero",
-              "Villa Carolina",
-              "Mujer",
-            ],
-            [
-              "740186361",
-              "Dayana Herrera",
-              "321743039",
-              "dayahe@gmail.com",
-              "30 Junio",
-              "Paraiso",
-              "Mujer",
-            ],
-            [
-              "115672346",
-              "Valerie Vergara",
-              "315642039",
-              "vergaraVale@gmail.com",
-              "31 Diciembre",
-              "Villa Carolina",
-              "Mujer",
-            ],
-          ]}
+          rows={rowsWithEditButton}
         />
       </Card>
     </div>
