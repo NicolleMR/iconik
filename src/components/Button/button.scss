@@ -1,8 +1,6 @@
 $btn-bkg: #c28585;
 
 .button {
-  background-color: $btn-bkg;
-  color: white;
   border: 1px solid $btn-bkg;
   padding: 10px;
   border-radius: 5px;
@@ -12,7 +10,17 @@ $btn-bkg: #c28585;
   outline: none;
   font-weight: 600;
 
-  &:hover {
-    background-color: darken($btn-bkg, 10%);
+  &--primary {
+    background-color: $btn-bkg;
+    color: white;
+
+    &:hover {
+      background-color: darken($btn-bkg, 10%);
+    }
+  }
+
+  &--outline {
+    background-color: white;
+    color: $btn-bkg;
   }
 }

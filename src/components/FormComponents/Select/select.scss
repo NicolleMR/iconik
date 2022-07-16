@@ -23,6 +23,10 @@
     box-shadow: none;
     min-height: unset;
     height: 36.5px;
+
+    .select__container.has-error & {
+      border-color: var(--error-color);
+    }
   }
   & &__single-value,
   & &__input-container,
@@ -30,6 +34,22 @@
   & &__indicator:hover {
     color: black;
     font-family: "cera-pro", sans-serif;
+
+    .select__container.has-error & {
+      color: var(--error-color);
+    }
+  }
+
+  & &__indicator-separator {
+    .select__container.has-error & {
+      background-color: var(--error-color);
+    }
+  }
+
+  & &__placeholder {
+    .select__container.has-error & {
+      color: var(--error-color);
+    }
   }
 
   & &__option--is-selected {

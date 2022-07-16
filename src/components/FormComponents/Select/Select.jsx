@@ -10,18 +10,16 @@ const Select = ({ control, name, label, error, isRequired, options, ...rest }) =
     <Controller
       name={name}
       control={control}
-      rules={{ required: isRequired }}
-      render={({ field: { value, onChange, onBlur } }) => (
+      rules={{ required: { value: isRequired, message: "Requerido" } }}
+      render={({ field: { value, onChange, onBlur, ...field } }) => (
         <ReactSelect
           className="select"
           classNamePrefix="select"
           options={options}
-          onChange={(a) => {
-            // debugger;
-            onChange(a);
-          }}
+          onChange={onChange}
           onBlur={onBlur}
           value={value}
+          {...field}
           {...rest}
         />
       )}
