@@ -3,14 +3,27 @@ import { useForm } from "react-hook-form";
 import Modal from "components/Modal";
 import Button from "components/Button";
 import InputField from "components/FormComponents/InputField";
+import Select from "components/FormComponents/Select";
+import { capitalize } from "utils/string";
 import "./employee-modal.scss";
 
-const EmployeeModal = ({ isModalOpen, closeModal }) => {
+const EmployeeModal = ({ isModalOpen, closeModal, selectedEmployee }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+    control,
+  } = useForm({
+    defaultValues: selectedEmployee
+      ? {
+          ...selectedEmployee,
+          gender: {
+            value: selectedEmployee.gender,
+            label: capitalize(selectedEmployee.gender),
+          },
+        }
+      : {},
+  });
 
   const onSubmit = () => {};
 
@@ -18,17 +31,17 @@ const EmployeeModal = ({ isModalOpen, closeModal }) => {
     <Modal
       isModalOpen={isModalOpen}
       closeModal={closeModal}
-      className="create-employee-modal"
+      className="employee-modal"
       label="Create Employee Modal"
       title="Crear Trabajador"
     >
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="create-customer-modal__container">
+        <div className="employee-modal__container">
           <InputField
-            name="id"
+            name="identificationNumber"
             label="Cedula"
             register={register}
-            error={errors.id?.message}
+            error={errors.identificationNumber?.message}
             isRequired
           />
           <InputField
@@ -46,6 +59,25 @@ const EmployeeModal = ({ isModalOpen, closeModal }) => {
             isRequired
           />
           <InputField
+            name="dob"
+            type="date"
+            label="Feche de nacimiento"
+            register={register}
+            error={errors.neighborhood?.message}
+          />
+          <Select
+            name="gender"
+            label="Género"
+            control={control}
+            error={errors.gender?.message}
+            placeholder="Selecciona un genero"
+            options={[
+              { value: "hombre", label: "Hombre" },
+              { value: "mujer", label: "Mujer" },
+            ]}
+            isRequired
+          />
+          <InputField
             name="address"
             label="Dirección"
             register={register}
@@ -53,17 +85,10 @@ const EmployeeModal = ({ isModalOpen, closeModal }) => {
             isRequired
           />
           <InputField
-            name="mobileNumber"
+            name="cellphone"
             label="Celular"
             register={register}
-            error={errors.mobileNumber?.message}
-            isRequired
-          />
-          <InputField
-            name="gender"
-            label="Género"
-            register={register}
-            error={errors.mobileNumber?.message}
+            error={errors.cellphone?.message}
             isRequired
           />
           <InputField
@@ -92,6 +117,21 @@ const EmployeeModal = ({ isModalOpen, closeModal }) => {
 EmployeeModal.propTypes = {
   isModalOpen: PropTypes.bool.isRequired,
   closeModal: PropTypes.func.isRequired,
+  selectedEmployee: PropTypes.shape({
+    identificationNumber: PropTypes.string,
+    firstName: PropTypes.string,
+    lastName: PropTypes.string,
+    dob: PropTypes.string,
+    gender: PropTypes.string,
+    address: PropTypes.string,
+    cellphone: PropTypes.string,
+    paymentMethod: PropTypes.string,
+    accountNumber: PropTypes.string,
+  }),
+};
+
+EmployeeModal.defaultProps = {
+  selectedEmployee: null,
 };
 
 export default EmployeeModal;

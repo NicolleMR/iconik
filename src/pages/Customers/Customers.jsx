@@ -9,11 +9,14 @@ import "./customers.scss";
 
 const Customers = () => {
   const { openModal } = ModalContext();
-  const formattedData = data.map(({ id, firstName, lastName, ...rest }) => ({
-    id,
-    name: `${firstName} ${lastName}`,
-    ...rest,
-  }));
+  const formattedData = data.map(
+    ({ id, identificationNumber, firstName, lastName, ...rest }) => ({
+      id,
+      identificationNumber,
+      name: `${firstName} ${lastName}`,
+      ...rest,
+    }),
+  );
   const formattedRows = formatRows(formattedData);
   const rowsWithEditButton = formattedRows.map((row, index) => [
     ...row,
@@ -56,8 +59,8 @@ const Customers = () => {
               Email
             </div>,
             "Fecha de nacimiento",
-            "Barrio",
             "Género",
+            "Barrio",
             "",
           ]}
           rows={rowsWithEditButton}

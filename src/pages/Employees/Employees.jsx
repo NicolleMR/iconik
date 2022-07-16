@@ -3,10 +3,24 @@ import Table from "components/Table";
 import Button from "components/Button";
 import Icon from "components/Icon";
 import { ModalContext, modalType } from "contexts/Modal";
+import { formatRows } from "utils/table";
+import data from "./mockData";
 import "./employees.scss";
 
 const Employees = () => {
   const { openModal } = ModalContext();
+  const formattedRows = formatRows(data);
+  const rowsWithEditButton = formattedRows.map((row, index) => [
+    ...row,
+    <button
+      type="button"
+      onClick={() =>
+        openModal({ type: modalType.EMPLOYEE, props: { employee: data[index] } })
+      }
+    >
+      <Icon name="edit" height={20} width={20} />
+    </button>,
+  ]);
 
   return (
     <div>
@@ -29,6 +43,8 @@ const Employees = () => {
             "Cedula",
             "Nombre",
             "Apellido",
+            "Fecha de nacimiento",
+            "Género",
             <div>
               <Icon height={16} width={16} name="location" />
               Dirección
@@ -42,90 +58,9 @@ const Employees = () => {
               Forma de pago
             </div>,
             "# de cuenta",
-            "Género",
+            "",
           ]}
-          rows={[
-            [
-              "1148147822",
-              "Olga Yaneth",
-              "Diaz Vargas",
-              "Cra 27 # 85a - 52 El Eden",
-              "3213947814",
-              "Bancolombia a la mano",
-              "03213947814",
-              "Mujer",
-            ],
-            [
-              "1048147822",
-              "Olga Yaneth",
-              "Diaz Vargas",
-              "Cra 27 # 85a - 52 El Eden",
-              "3213947814",
-              "Bancolombia a la mano",
-              "03213947814",
-              "Mujer",
-            ],
-            [
-              "1148147822",
-              "Olga Yaneth",
-              "Diaz Vargas",
-              "Cra 27 # 85a - 52 El Eden",
-              "3213947814",
-              "Bancolombia a la mano",
-              "03213947814",
-              "Mujer",
-            ],
-            [
-              "1148147822",
-              "Olga Yaneth",
-              "Diaz Vargas",
-              "Cra 27 # 85a - 52 El Eden",
-              "3213947814",
-              "Bancolombia a la mano",
-              "03213947814",
-              "Mujer",
-            ],
-            [
-              "1148147822",
-              "Olga Yaneth",
-              "Diaz Vargas",
-              "Cra 27 # 85a - 52 El Eden",
-              "3213947814",
-              "Bancolombia a la mano",
-              "03213947814",
-              "Mujer",
-            ],
-            [
-              "1148147822",
-              "Olga Yaneth",
-              "Diaz Vargas",
-              "Cra 27 # 85a - 52 El Eden",
-              "3213947814",
-              "Bancolombia a la mano",
-              "03213947814",
-              "Mujer",
-            ],
-            [
-              "1148147822",
-              "Olga Yaneth",
-              "Diaz Vargas",
-              "Cra 27 # 85a - 52 El Eden",
-              "3213947814",
-              "Bancolombia a la mano",
-              "03213947814",
-              "Mujer",
-            ],
-            [
-              "1148147822",
-              "Olga Yaneth",
-              "Diaz Vargas",
-              "Cra 27 # 85a - 52 El Eden",
-              "3213947814",
-              "Bancolombia a la mano",
-              "03213947814",
-              "Mujer",
-            ],
-          ]}
+          rows={rowsWithEditButton}
         />
       </Card>
     </div>

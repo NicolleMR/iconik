@@ -40,7 +40,7 @@ const CustomerModal = ({ isModalOpen, closeModal, selectedCustomer }) => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="customer-modal__container">
           <InputField
-            name="id"
+            name="identificationNumber"
             label="Cedula"
             register={register}
             error={errors.id?.message}
@@ -81,12 +81,6 @@ const CustomerModal = ({ isModalOpen, closeModal, selectedCustomer }) => {
             register={register}
             error={errors.neighborhood?.message}
           />
-          <InputField
-            name="neighborhood"
-            label="Barrio"
-            register={register}
-            error={errors.neighborhood?.message}
-          />
           <Select
             name="gender"
             label="Género"
@@ -98,6 +92,12 @@ const CustomerModal = ({ isModalOpen, closeModal, selectedCustomer }) => {
               { value: "mujer", label: "Mujer" },
             ]}
             isRequired
+          />
+          <InputField
+            name="neighborhood"
+            label="Barrio"
+            register={register}
+            error={errors.neighborhood?.message}
           />
         </div>
         <Button type="submit" className="customer-modal__button">
@@ -112,7 +112,7 @@ CustomerModal.propTypes = {
   isModalOpen: PropTypes.bool.isRequired,
   closeModal: PropTypes.func.isRequired,
   selectedCustomer: PropTypes.shape({
-    id: PropTypes.string,
+    identificationNumber: PropTypes.string,
     firstName: PropTypes.string,
     lastName: PropTypes.string,
     cellphone: PropTypes.string,

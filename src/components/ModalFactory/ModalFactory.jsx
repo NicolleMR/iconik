@@ -19,7 +19,13 @@ const ModalFactory = () => {
         />
       );
     case modalType.EMPLOYEE:
-      return <EmployeeModal isModalOpen closeModal={() => closeModal()} />;
+      return (
+        <EmployeeModal
+          isModalOpen
+          closeModal={() => closeModal()}
+          selectedEmployee={modal?.props?.employee}
+        />
+      );
     case modalType.NONE:
     default:
       return null;

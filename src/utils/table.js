@@ -1,1 +1,1 @@
-export const formatRows = (rows) => rows.map((row) => Object.values(row));
+export const formatRows = (rows) => rows.map(({ id, ...row }) => Object.values(row));
