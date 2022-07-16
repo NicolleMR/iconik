@@ -10,6 +10,7 @@ export default [
     cellphone: "3213947814",
     paymentMethod: "Bancolombia a la mano",
     accountNumber: "03213947814",
+    state: true,
   },
   {
     id: "2",
@@ -22,6 +23,7 @@ export default [
     cellphone: "3213947814",
     paymentMethod: "Bancolombia a la mano",
     accountNumber: "03213947814",
+    state: false,
   },
   {
     id: "3",
@@ -34,6 +36,7 @@ export default [
     cellphone: "3213947814",
     paymentMethod: "Bancolombia a la mano",
     accountNumber: "03213947814",
+    state: true,
   },
   {
     id: "4",
@@ -46,6 +49,7 @@ export default [
     cellphone: "3213947814",
     paymentMethod: "Bancolombia a la mano",
     accountNumber: "03213947814",
+    state: true,
   },
   {
     id: "5",
@@ -58,6 +62,7 @@ export default [
     cellphone: "3213947814",
     paymentMethod: "Bancolombia a la mano",
     accountNumber: "03213947814",
+    state: true,
   },
   {
     id: "6",
@@ -70,5 +75,6 @@ export default [
     cellphone: "3213947814",
     paymentMethod: "Bancolombia a la mano",
     accountNumber: "03213947814",
+    state: true,
   },
 ];

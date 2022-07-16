@@ -20,20 +20,41 @@ const Customers = () => {
   const formattedRows = formatRows(formattedData);
   const rowsWithEditButton = formattedRows.map((row, index) => [
     ...row,
-    <button
-      type="button"
-      onClick={() =>
-        openModal({ type: modalType.CUSTOMER, props: { customer: data[index] } })
-      }
-    >
-      <Icon name="edit" height={20} width={20} />
-    </button>,
+    <>
+      <button
+        type="button"
+        onClick={() =>
+          openModal({ type: modalType.CUSTOMER, props: { customer: data[index] } })
+        }
+      >
+        <Icon name="edit" height={20} width={20} />
+      </button>
+      <button
+        type="button"
+        onClick={() => {
+          const isWoman = data[index].gender === "mujer";
+          const customerName = `${data[index].firstName} ${data[index].lastName}`;
+          openModal({
+            type: modalType.CONFIRM,
+            props: {
+              title: "Eliminar Cliente",
+              description: `¿Estas seguro que quieres eliminar ${
+                isWoman ? "a la clienta" : "al cliente"
+              } ${customerName}?`,
+              onConfirm: () => {},
+            },
+          });
+        }}
+      >
+        <Icon name="bin" height={20} width={20} />
+      </button>
+    </>,
   ]);
 
   return (
-    <div>
+    <div className="customers">
       <Card>
-        <div className="customers">
+        <div className="customers__header">
           <h2 className="customers__title">
             <Icon height={24} width={24} name="group" />
             Clientes

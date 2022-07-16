@@ -1,8 +1,10 @@
 .customers {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
 
   &__title {
     color: var(--third-color);
@@ -16,6 +18,15 @@
 
     svg {
       fill: var(--third-color) !important;
+    }
+  }
+
+  .table {
+    tr {
+      td:last-child,
+      th:last-child {
+        width: 105px;
+      }
     }
   }
 }

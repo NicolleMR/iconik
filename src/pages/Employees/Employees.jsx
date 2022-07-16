@@ -9,17 +9,42 @@ import "./employees.scss";
 
 const Employees = () => {
   const { openModal } = ModalContext();
-  const formattedRows = formatRows(data);
+  const formattedData = data.map(({ state, ...rest }) => ({
+    ...rest,
+    state: state ? "Activo" : "Inactivo",
+  }));
+  const formattedRows = formatRows(formattedData);
   const rowsWithEditButton = formattedRows.map((row, index) => [
     ...row,
-    <button
-      type="button"
-      onClick={() =>
-        openModal({ type: modalType.EMPLOYEE, props: { employee: data[index] } })
-      }
-    >
-      <Icon name="edit" height={20} width={20} />
-    </button>,
+    <>
+      <button
+        type="button"
+        onClick={() =>
+          openModal({ type: modalType.EMPLOYEE, props: { employee: data[index] } })
+        }
+      >
+        <Icon name="edit" height={20} width={20} />
+      </button>
+      <button
+        type="button"
+        onClick={() => {
+          const isWoman = data[index].gender === "mujer";
+          const employeeName = `${data[index].firstName} ${data[index].lastName}`;
+          openModal({
+            type: modalType.CONFIRM,
+            props: {
+              title: "Eliminar Trabajador",
+              description: `¿Estas seguro que quieres eliminar ${
+                isWoman ? "a la trabajadora" : "al trabajador"
+              } ${employeeName}?`,
+              onConfirm: () => {},
+            },
+          });
+        }}
+      >
+        <Icon name="bin" height={20} width={20} />
+      </button>
+    </>,
   ]);
 
   return (
@@ -58,6 +83,7 @@ const Employees = () => {
               Forma de pago
             </div>,
             "# de cuenta",
+            "Estado",
             "",
           ]}
           rows={rowsWithEditButton}

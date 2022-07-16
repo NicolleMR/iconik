@@ -8,13 +8,14 @@ import { capitalize } from "utils/string";
 import "./customer-modal.scss";
 
 const CustomerModal = ({ isModalOpen, closeModal, selectedCustomer }) => {
+  const isEditMode = !!selectedCustomer;
   const {
     register,
     handleSubmit,
     formState: { errors },
     control,
   } = useForm({
-    defaultValues: selectedCustomer
+    defaultValues: isEditMode
       ? {
           ...selectedCustomer,
           gender: {
@@ -25,9 +26,7 @@ const CustomerModal = ({ isModalOpen, closeModal, selectedCustomer }) => {
       : {},
   });
 
-  const onSubmit = (values) => {
-    console.log("values", values);
-  };
+  const onSubmit = () => {};
 
   return (
     <Modal
@@ -35,7 +34,7 @@ const CustomerModal = ({ isModalOpen, closeModal, selectedCustomer }) => {
       closeModal={closeModal}
       className="customer-modal"
       label="Create Customer Modal"
-      title="Crear Cliente"
+      title={`${isEditMode ? "Editar" : "Crear"} cliente`}
     >
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="customer-modal__container">
@@ -43,7 +42,7 @@ const CustomerModal = ({ isModalOpen, closeModal, selectedCustomer }) => {
             name="identificationNumber"
             label="Cedula"
             register={register}
-            error={errors.id?.message}
+            error={errors.identificationNumber?.message}
             isRequired
           />
           <InputField
@@ -67,20 +66,6 @@ const CustomerModal = ({ isModalOpen, closeModal, selectedCustomer }) => {
             error={errors.cellphone?.message}
             isRequired
           />
-          <InputField
-            name="email"
-            label="Email"
-            type="email"
-            register={register}
-            error={errors.email?.message}
-          />
-          <InputField
-            name="dob"
-            type="date"
-            label="Feche de nacimiento"
-            register={register}
-            error={errors.neighborhood?.message}
-          />
           <Select
             name="gender"
             label="Género"
@@ -94,14 +79,28 @@ const CustomerModal = ({ isModalOpen, closeModal, selectedCustomer }) => {
             isRequired
           />
           <InputField
+            name="dob"
+            type="date"
+            label="Feche de nacimiento"
+            register={register}
+            error={errors.neighborhood?.message}
+          />
+          <InputField
             name="neighborhood"
             label="Barrio"
             register={register}
             error={errors.neighborhood?.message}
           />
+          <InputField
+            name="email"
+            label="Email"
+            type="email"
+            register={register}
+            error={errors.email?.message}
+          />
         </div>
         <Button type="submit" className="customer-modal__button">
-          Crear
+          {isEditMode ? "Actualizar" : "Crear"}
         </Button>
       </form>
     </Modal>

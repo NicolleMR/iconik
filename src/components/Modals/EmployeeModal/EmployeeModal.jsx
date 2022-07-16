@@ -3,29 +3,32 @@ import { useForm } from "react-hook-form";
 import Modal from "components/Modal";
 import Button from "components/Button";
 import InputField from "components/FormComponents/InputField";
+import Checkbox from "components/FormComponents/Checkbox";
 import Select from "components/FormComponents/Select";
 import { capitalize } from "utils/string";
 import "./employee-modal.scss";
 
 const EmployeeModal = ({ isModalOpen, closeModal, selectedEmployee }) => {
+  const isEditMode = !!selectedEmployee;
   const {
     register,
     handleSubmit,
     formState: { errors },
     control,
   } = useForm({
-    defaultValues: selectedEmployee
+    defaultValues: isEditMode
       ? {
           ...selectedEmployee,
           gender: {
             value: selectedEmployee.gender,
             label: capitalize(selectedEmployee.gender),
           },
+          state: !!selectedEmployee.state,
         }
       : {},
   });
 
-  const onSubmit = () => {};
+  const onSubmit = (values) => console.log("values", values);
 
   return (
     <Modal
@@ -33,7 +36,7 @@ const EmployeeModal = ({ isModalOpen, closeModal, selectedEmployee }) => {
       closeModal={closeModal}
       className="employee-modal"
       label="Create Employee Modal"
-      title="Crear Trabajador"
+      title={`${isEditMode ? "Editar" : "Crear"} Trabajador`}
     >
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="employee-modal__container">
@@ -63,7 +66,8 @@ const EmployeeModal = ({ isModalOpen, closeModal, selectedEmployee }) => {
             type="date"
             label="Feche de nacimiento"
             register={register}
-            error={errors.neighborhood?.message}
+            error={errors.dob?.message}
+            isRequired
           />
           <Select
             name="gender"
@@ -95,19 +99,20 @@ const EmployeeModal = ({ isModalOpen, closeModal, selectedEmployee }) => {
             name="paymentMethod"
             label="Forma de pago"
             register={register}
-            error={errors.mobileNumber?.message}
+            error={errors.paymentMethod?.message}
             isRequired
           />
           <InputField
             name="accountNumber"
             label="Número de cuenta"
             register={register}
-            error={errors.mobileNumber?.message}
+            error={errors.accountNumber?.message}
             isRequired
           />
+          <Checkbox name="state" label="Habilitar trabajador" register={register} />
         </div>
-        <Button type="submit" className="create-customer-modal__button">
-          Crear
+        <Button type="submit" className="employee-modal__button">
+          {isEditMode ? "Actualizar" : "Crear"}
         </Button>
       </form>
     </Modal>
@@ -127,6 +132,7 @@ EmployeeModal.propTypes = {
     cellphone: PropTypes.string,
     paymentMethod: PropTypes.string,
     accountNumber: PropTypes.string,
+    state: PropTypes.bool,
   }),
 };
 
