@@ -16,6 +16,7 @@ Icon.propTypes = {
   height: PropTypes.number,
   color: PropTypes.string,
   name: PropTypes.oneOf([
+    "bin",
     "calendar-check",
     "clear",
     "config",

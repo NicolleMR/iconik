@@ -1,0 +1,11 @@
+.confirm-modal {
+  &__description {
+    font-size: 18px;
+  }
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+  }
+}

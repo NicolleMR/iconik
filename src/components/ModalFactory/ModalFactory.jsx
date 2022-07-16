@@ -1,6 +1,7 @@
 import { ModalContext, modalType } from "contexts/Modal";
 import CustomerModal from "components/Modals/CustomerModal";
 import EmployeeModal from "components/Modals/EmployeeModal";
+import ConfirmModal from "components/Modals/ConfirmModal";
 
 const ModalFactory = () => {
   const { modal, openModal } = ModalContext();
@@ -10,6 +11,15 @@ const ModalFactory = () => {
   };
 
   switch (modal?.type) {
+    case modalType.CONFIRM:
+      return (
+        <ConfirmModal
+          isModalOpen
+          closeModal={() => closeModal()}
+          selectedCustomer={modal?.props?.customer}
+          {...modal?.props}
+        />
+      );
     case modalType.CUSTOMER:
       return (
         <CustomerModal
