@@ -5,6 +5,7 @@ export const modalType = {
   NONE: "none",
   CUSTOMER: "customer",
   EMPLOYEE: "employee",
+  SERVICE: "service",
   CONFIRM: "confirm",
 };
 

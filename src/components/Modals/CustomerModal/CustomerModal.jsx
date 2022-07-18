@@ -2,9 +2,9 @@ import PropTypes from "prop-types";
 import { useForm } from "react-hook-form";
 import Modal from "components/Modal";
 import Button from "components/Button";
-import InputField from "components/FormComponents/InputField";
 import Select from "components/FormComponents/Select";
 import { capitalize } from "utils/string";
+import TextField from "components/FormComponents/TextField";
 import "./customer-modal.scss";
 
 const CustomerModal = ({ isModalOpen, closeModal, selectedCustomer }) => {
@@ -33,33 +33,33 @@ const CustomerModal = ({ isModalOpen, closeModal, selectedCustomer }) => {
       isModalOpen={isModalOpen}
       closeModal={closeModal}
       className="customer-modal"
-      label="Create Customer Modal"
+      label="Customer Modal"
       title={`${isEditMode ? "Editar" : "Crear"} cliente`}
     >
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="customer-modal__container">
-          <InputField
+          <TextField
             name="identificationNumber"
             label="Cedula"
             register={register}
             error={errors.identificationNumber?.message}
             isRequired
           />
-          <InputField
+          <TextField
             name="firstName"
             label="Nombre"
             register={register}
             error={errors.firstName?.message}
             isRequired
           />
-          <InputField
+          <TextField
             name="lastName"
             label="Apellido"
             register={register}
             error={errors.lastName?.message}
             isRequired
           />
-          <InputField
+          <TextField
             name="cellphone"
             label="Celular"
             register={register}
@@ -78,20 +78,20 @@ const CustomerModal = ({ isModalOpen, closeModal, selectedCustomer }) => {
             ]}
             isRequired
           />
-          <InputField
+          <TextField
             name="dob"
             type="date"
             label="Feche de nacimiento"
             register={register}
             error={errors.neighborhood?.message}
           />
-          <InputField
+          <TextField
             name="neighborhood"
             label="Barrio"
             register={register}
             error={errors.neighborhood?.message}
           />
-          <InputField
+          <TextField
             name="email"
             label="Email"
             type="email"

@@ -1,0 +1,17 @@
+.services-modal {
+  width: 100%;
+  max-width: 500px;
+
+  &__form {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  &__button {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+}
